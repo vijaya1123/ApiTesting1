@@ -1,0 +1,30 @@
+<?xml version = "1.0"?>
+<department>
+    <employee id = "10001">
+        <firstname>Tom</firstname>
+        <lastname>Mathew</lastname>
+        <salary>25000</salary>
+        <age>21</age>
+    </employee>
+ 
+    <employee id = "20001">
+        <firstname>Katherine</firstname>
+        <lastname>Jason</lastname>
+        <salary>15000</salary>
+        <age>20</age>
+    </employee>
+ 
+    <employee id = "30001">
+        <firstname>David</firstname>
+        <lastname>Mathew</lastname>
+        <salary>35000</salary>
+        <age>25</age>
+    </employee>
+ 
+    <employee id = "40001">
+        <firstname>Berry</firstname>
+        <lastname>Brian</lastname>
+        <salary>50000</salary>
+        <age>30</age>
+    </employee>
+</department>

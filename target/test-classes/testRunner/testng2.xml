@@ -1,0 +1,10 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "API Testing Suite ">
+
+   <test name = "Parallel Tests" thread-count = "2">
+      <classes>
+                  <class name = "com.qa.restAssured.JsonAssertDemo"/>
+      </classes>
+   </test>
+</suite>

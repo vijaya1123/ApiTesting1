@@ -1,0 +1,17 @@
+{
+
+    "data":
+    {
+        "id":1 ,
+        "email": "vijaympct03@gmail.com",
+        "firstnm":"vijay",
+        "lastname":"sharma",
+        "avataar":"https://reqres.in/img-faces/3-image.jpg",
+        "support":
+        {
+            "url":"https://reqres.in/support-heading",
+            "text": "to keep"
+        }
+
+    }
+}

@@ -1,0 +1,7 @@
+com\qa\restAssured\XMLParser.class
+com\qa\restAssured\Employee.class
+com\qa\restAssured\JsonAssertDemo.class
+com\qa\restAssured\JsonCompare.class
+com\qa\restAssured\ChildNodes.class
+com\qa\restAssured\JsonPath_Demo.class
+com\qa\restAssured\DeserilisationTest.class

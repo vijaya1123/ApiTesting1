@@ -1,0 +1,13 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "API Testing Suite ">
+	<listeners>
+		 <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" /> 
+	</listeners>
+   <test name = "Parallel Tests" thread-count = "2">
+      <classes>
+                  <class name = "com.qa.restAssured.XMLParser"/>
+                   <class name = "com.qa.restAssured.DeserilisationTest"/>
+      </classes>
+   </test>
+</suite>

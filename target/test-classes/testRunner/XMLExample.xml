@@ -1,0 +1,11 @@
+<Employee>
+  <firstName>Vibha</firstName>
+  <lastName>Singh</lastName>
+  <age>35</age>
+  <salary>135000.0</salary>
+  <designation>Manager</designation>
+  <contactNumber>+919999988822</contactNumber>
+  <emailId>abc@test.com</emailId>
+  <gender>female</gender>
+  <maritalStatus>married</maritalStatus>
+</Employee>

@@ -1,0 +1,9 @@
+<?xml version = "1.0"?>
+<department>
+    <employee>
+        <firstname>Tom</firstname>
+        <lastname>Mathew</lastname>
+        <salary>25000</salary>
+        <age>21</age>
+    </employee>
+</department>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EmployeeDetails>
+    <firstName>Terry</firstName>
+    <lastName>Mathew</lastName>
+    <gender>female</gender>
+    <age>30</age>
+    <maritalStatus>married</maritalStatus>
+    <designation>Manager</designation>
+    <contactNumber>+919999988822</contactNumber>
+    <emailId>abc@test.com</emailId>
+    <GrossSalary>75000.0</GrossSalary>
+</EmployeeDetails>
