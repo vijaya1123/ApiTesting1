@@ -21,5 +21,6 @@ public class JsonAssertDemo {
  
         // Lenient mode - extensible and no strict ordering
         JSONAssert.assertEquals(jsonObject1, jsonObject2, JSONCompareMode.LENIENT);
+        
     }
 }
