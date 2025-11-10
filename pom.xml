@@ -1,94 +1,96 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.qa.restAssured</groupId>
-  <artifactId>ApiAutomationTestCases</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qa.restAssured</groupId>
+	<artifactId>ApiAutomationTestCases</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<rest-assured.version>5.3.2</rest-assured.version>
-		 <chaintest.testng.version>1.0.7</chaintest.testng.version>
-    <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
-    <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
-    <aspectj.version>1.9.20.1</aspectj.version>
+		<chaintest.testng.version>1.0.7</chaintest.testng.version>
+		<maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+		<maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
+		<aspectj.version>1.9.20.1</aspectj.version>
 	</properties>
-	
-	 <profiles>
-        <profile>
-            <id>Sanity</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.20</version>
 
-                        <configuration>
-                            <forkCount>3</forkCount>
-                            <reuseForks>true</reuseForks>
-                            <suiteXmlFiles>
-                                <suiteXmlFile>
-                                    src/test/resources/testRunner/testng2.xml</suiteXmlFile>
-                                <!--
+	<profiles>
+		<profile>
+			<id>Sanity</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.20</version>
+
+						<configuration>
+							<forkCount>3</forkCount>
+							<reuseForks>true</reuseForks>
+							<suiteXmlFiles>
+								<suiteXmlFile>
+									src/test/resources/testRunner/testng2.xml</suiteXmlFile>
+								<!--
                                 <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>  -->
-                            </suiteXmlFiles>
-                        </configuration>
-                    </plugin>
-                </plugins>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
 
-            </build>
-        </profile>
-         </profiles>
+			</build>
+		</profile>
+	</profiles>
 
- <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.2</version>
-                <configuration>
-                    <parallel>methods</parallel>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					<parallel>methods</parallel>
 					<threadCount>${threadInstances}</threadCount>
 					<suiteXmlFiles>
 						<!-- You can add more than 1 XML files here also -->
 						<!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
 						<!--<suiteXmlFile>${suiteFile}</suiteXmlFile>-->
 						<!--<suiteXmlFile>src/test/resources/runners/${suiteFile}.xml</suiteXmlFile>-->
-					  <suiteXmlFile>src/test/resources/testRunner/testng2.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/testRunner/testng2.xml</suiteXmlFile>
 
 					</suiteXmlFiles>
-                
-                </configuration>
-              
-            </plugin>
-        </plugins>
-    </build>
 
-    <dependencies>
-      <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
 			<version>4.4.0</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-		
-		 <!-- Chain Test Report -->
-    <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>chaintest-testng</artifactId>
-      <version>${chaintest.testng.version}</version>
-    </dependency>
+
+		<!-- Chain Test Report -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>chaintest-testng</artifactId>
+			<version>${chaintest.testng.version}</version>
+		</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -98,34 +100,34 @@
 			<version>7.4.0</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-		
-		  <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>4.0.4</version>
-        </dependency>
-        
-           <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.1</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.17.2</version>
-        </dependency>
-        
-        <dependency>
+
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>4.0.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.17.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.skyscreamer</groupId>
 			<artifactId>jsonassert</artifactId>
 			<version>1.5.1</version>
 			<scope>test</scope>
 		</dependency>
-		
-			<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+
+		<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
@@ -137,8 +139,8 @@
 			<artifactId>json</artifactId>
 			<version>20240303</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -168,21 +170,22 @@
 		</dependency>
 
 
-        <!-- JAXB API v3.0.1 -->
-        <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.2</version> <!-- Use the latest version -->
-        </dependency>
-		
-			<dependency>
+		<!-- JAXB API v3.0.1 -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>4.0.2</version> <!-- Use the latest version -->
+		</dependency>
+
+		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.9.2</version>
 		</dependency>
 
 		<!-- _43_Test_POST_PUT_DELETE_UsingMap - To convert Hashmap to JSON -->
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -190,7 +193,8 @@
 		</dependency>
 
 		<!--This dependency is used to perform the JSON Schema validation -->
-		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+		<!--
+		https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
@@ -226,7 +230,7 @@
 			<!-- <version>5.0.6</version> -->
 			<version>5.0.9</version>
 		</dependency>
-			<dependency>
+		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.27.0</version>
@@ -252,5 +256,5 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.2</version>
 		</dependency>
-    </dependencies>
+	</dependencies>
 </project>
