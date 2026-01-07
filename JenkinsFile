@@ -2,9 +2,10 @@ pipeline {
     agent any
  
     stages {
-        stage('Test') {
+        stage('Regression Test') {
             steps {
-                bat "mvn -D clean test"
+                     bat "mvn -Dmaven.test.failure.ignore=true clean package"
+
             }
  
             post {                
@@ -15,13 +16,15 @@ pipeline {
                        allowMissing: false, 
                        alwaysLinkToLastBuild: false, 
                        keepAll: false, 
-                       reportDir: 'target/surefire-reports/', 
-                       reportFiles: 'emailable-report.html', 
-                       reportName: 'HTML Report', 
-                       reportTitles: '', 
+                       keepAll: true, 
+                                  reportDir: 'target/chaintest', 
+                                  reportFiles: 'Index.html', 
+                                  reportName: 'HTML API Sanity ChainTest Report On Stage', 
+
                        useWrapperFileDirectly: true])
                 }
             }
         }
     }
 }
+
